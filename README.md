@@ -1,5 +1,7 @@
 # ANALISIS Y DISEÑO:
-## Requisitos funcionales del sistema:
+
+## Analisis.
+### Requisitos funcionales del sistema:
 - Entrada de datos. (nombre, teléfono, cantidad de boletos a comprar y presupuesto máximo.)
 - Generacion de reportes
 - Gestion de datos en un CSV
@@ -8,7 +10,7 @@
 - Construir objetos.
 - Verificar disponibilidad de entradas
 
-## Descripcion de clases y carpetas:
+### Descripcion de clases y carpetas:
 
 **Carpetas:**
 El Proyecto contiene una carpeta en la cual se gestionan todas las clases del sistema.
@@ -24,7 +26,7 @@ Descripcion de las clases en el sistema y su funcion:
 - `Stadium`: Clase para gestionar la capacidad, ventas, Localidades y reportes de ventas.
 - `App`: Clase donde se tiene el metodo main para instanciar objetos en el sistema.
 
-## Descripcion de Atributos y metodos de las clases:
+### Descripcion de Atributos y metodos de las clases:
 **Clase App**
 
 *Metodos:*
@@ -92,6 +94,16 @@ Descripcion de las clases en el sistema y su funcion:
 - checkTicketsAvailability(): Verificar disponibilidad de tickets en una localidad especifica.
 - generateReport():Generar reporte de ventas, ganancias y disponibilidad.
 
+
+## Diseño.
+### Diagrama de clases UML del proyecto.
+Ver el diagrama de clases [UML](https://github.com/Julio-orellana/Ejercicio1_POO/blob/main/docs/UML%20Mundial%20Femenino(1).jpg) del proyecto.
+
+### Patron de diseño.
+> Se usara un patron de diseño MVC el cual estara estructurado de la siguiente manera:
+- **Modeling:** Clases donde se gestionaran los comportamientos y estados de los objetos.
+- **View:** Terminal con la que interactuara el usuario Final del proyecto.
+- **Controller:** Clase main en donde se llevara a cabo la instancia de objetos y flujo del sistema.
 
 ## Repositorio de Github
 

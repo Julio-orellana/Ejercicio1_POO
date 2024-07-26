@@ -97,7 +97,8 @@ Descripcion de las clases en el sistema y su funcion:
 
 ## Diseño.
 ### Diagrama de clases UML del proyecto.
-Ver el diagrama de clases [UML](https://github.com/Julio-orellana/Ejercicio1_POO/blob/main/docs/UML%20Mundial%20Femenino(1).jpg) del proyecto.
+Diagrama de clases [UML](https://github.com/Julio-orellana/Ejercicio1_POO/blob/main/docs/UML%20Mundial%20Femenino(1).jpg) del proyecto.
+![UML del proyecto](https://github.com/user-attachments/assets/ffdc4fce-947e-41f3-b0ef-16affc5f19b5) 
 
 ### Patron de diseño.
 > Se usara un patron de diseño MVC el cual estara estructurado de la siguiente manera:

@@ -28,4 +28,11 @@ public class Stadium {
         }
     }
 
+    public int getTotalTicketsSold(){
+        int tkSold = 0;
+        for (int i = 0; i < this.locations.length; i++){
+            tkSold += this.locations[i].getTicketsSold();
+        } return tkSold;
+    }
+
 }

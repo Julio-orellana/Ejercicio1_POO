@@ -17,7 +17,7 @@ public class App {
             new Location("General", 5, 0, 500)
         };
 
-        Stadium stadium = new Stadium("Mercedes Benz Stadium",300,locations, 300, 15000);
+        Stadium stadium = new Stadium("Mercedes Benz Stadium",300,locations, 250, 15000);
 
         Client client1 = new Client("Julio Orellana", "5012-0433", 3, 8000);
 

@@ -25,9 +25,7 @@ public class App {
         client1.buyTickets(stadium, locations[1]);
         Ticket[] newTickets = client1.getTickets();
         for (int i =0; i<newTickets.length; i++){
-            newTickets[i].toString();
+           System.out.println(newTickets[i].toString());
         }
-        //client.buyTickets(stadium, location, 3, 1500);
-        //client.buyTickets(stadium, location, oldTickets, 3, 1500);
     }
 }

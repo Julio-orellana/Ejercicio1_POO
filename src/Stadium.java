@@ -36,9 +36,9 @@ public class Stadium {
     }
 
     public double getTotalRevenue(){
-        double totalRevenue;
+        double totalRevenue = 0;
          for (int i = 0; i < this.locations.length; i++){
-            totalRevenue += (this.locations[i].getPrice() * this.locations[i].getTicketsSold())
+            totalRevenue += (this.locations[i].getPrice() * this.locations[i].getTicketsSold());
          }
          this.revenue += totalRevenue;
          return this.revenue;

@@ -65,4 +65,8 @@ public class Location {
         return this.price;
     }
 
+    public String toString(){
+        return "Localidad: " + this.name + " Capacidad: " + this.capacity + " Tickets vendidos: " + this.ticketsSold + " Precio: " + this.price;
+    }
+
 }

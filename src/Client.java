@@ -60,13 +60,19 @@ public class Client {
     }
 
     public void buyTickets(Stadium stadium, Location location) {
-        Ticket[] newTickets = stadium.sellTickets(location, this.tickets, this.reqTickets, this.budget);
+        double moneySpent = 0;
+        Ticket lastTicket = this.tickets[this.tickets.length -1];
+        Ticket[] newTickets = stadium.sellTickets(location, lastTicket, this.reqTickets, this.budget);
         if (newTickets != null) {
             this.tickets = newTickets;
+            for (int i =0; i<newTickets.length; i++){
+                moneySpent += location.getPrice();
+            }
+            this.budget -= moneySpent;
         }
     }
 
     public String toString(){
-        return "Nombre: " + this.name + "\nTelefono: " + this.phone + "\nTickets requeridos: " + this.reqTickets + "\nPresupuesto: Q" + this.budget;
+        return "Nombre: " + this.name + "\nTelefono: " + this.phone + "\nTickets solicitados: " + this.reqTickets + "\nPresupuesto: Q" + this.budget;
     }
 }

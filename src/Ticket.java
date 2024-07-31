@@ -4,7 +4,7 @@ public class Ticket {
 
     private String ticketID;
     private LocalDate date = LocalDate.now();
-    private int correlativo;
+    private int correlativo = 0;
     private String locationName;
    
     // Constructores

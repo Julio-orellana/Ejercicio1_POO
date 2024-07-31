@@ -14,15 +14,16 @@ public class Ticket {
         this.locationName = locationName;
     }
 
-    public Ticket(int correlativo, String locationName, Ticket lasTicket){
+    public Ticket(int correlativo, String locationName, Ticket lastTicket){
         this.correlativo = correlativo;
         this.locationName = locationName;
-        this.ticketID = generateTicketID(lasTicket);
+        this.ticketID = generateTicketID(lastTicket);
     }
 
     public Ticket(int correlativo, String locationName){
         this.correlativo = correlativo;
         this.locationName = locationName;
+        this.ticketID = generateTicketID();
     }
 
     public int getCorrelativo(){
@@ -31,13 +32,12 @@ public class Ticket {
 
     public String generateTicketID(){
         String newCorrelativo = String.valueOf(this.correlativo);
-        this.correlativo++;
         return date + "-" + newCorrelativo;
     }
 
     public String generateTicketID(Ticket lastTicket){
-        String newCorrelativo = String.valueOf(lastTicket.getCorrelativo());
-        this.correlativo++;
+        int newCorrelativo = lastTicket.getCorrelativo() + 1;
+        this.correlativo = newCorrelativo;
         return date + "-" + newCorrelativo;
     }
 

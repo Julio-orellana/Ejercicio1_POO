@@ -30,39 +30,39 @@ public class Location {
 
         return budget >= this.price * reqTickets;
     }
-     
-    // Tipo de retorno del metodo modificado.
-    public Ticket[] sellTickets(int reqTickets, double budget){
-        Ticket[] newTickets = new Ticket[reqTickets];
-        if (this.checkAvailability(reqTickets, budget)){
-            for (int i = 0; i < newTickets.length; i++){
-                newTickets[i] = new Ticket(i, this.name);
-                this.capacity--;
-                this.ticketsSold++;
-            }
-        } return newTickets;
-    }
 
     // Overload para validar si antes tenia mas tickets y no perderlos.
     public Ticket[] sellTickets(Ticket[] oldTickets, int reqTickets, double budget){
-        Ticket[] newTickets = new Ticket[reqTickets + oldTickets.length];
-        if (this.checkAvailability(reqTickets, budget)){
-            for (int i = 0; i < newTickets.length; i++){
-                for (int j = 0; j < oldTickets.length; j++){
-                    newTickets[i] = oldTickets[j];
-                    this.capacity--;
-                    this.ticketsSold++;
-                }
-                newTickets[i] = new Ticket(newTickets[i-1].getCorrelativo(), this.name);
-                this.capacity--;
-                this.ticketsSold++;
-            }
-        } return newTickets;
-    }
+        if (!this.checkAvailability(reqTickets, budget)) return null;
+        Ticket[] newTickets = new Ticket[reqTickets];
+        for (int i = 0; i < reqTickets; i++) {
+            newTickets[i] = new Ticket(ticketsSold + i + 1, name);
+        }
+
+        ticketsSold += reqTickets;
+        return newTickets;
+    } 
 
     public boolean checkAvailability(int tickets, double budget){
         if (this.validateSpace(tickets)){
             if (this.validatePrice(budget, tickets)) return true;
         } return false;
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getTicketsSold(){
+        return this.ticketsSold;
+    }
+
+    public int getCapacity(){
+        return this.capacity;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+
 }

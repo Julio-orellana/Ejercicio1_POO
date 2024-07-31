@@ -65,4 +65,12 @@ public class Location {
             if (this.validatePrice(budget, tickets)) return true;
         } return false;
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getTicketsSold(){
+        return this.ticketsSold;
+    }
 }

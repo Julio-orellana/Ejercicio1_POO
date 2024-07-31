@@ -73,4 +73,13 @@ public class Location {
     public int getTicketsSold(){
         return this.ticketsSold;
     }
+
+    public int getCapacity(){
+        return this.capacity;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+
 }

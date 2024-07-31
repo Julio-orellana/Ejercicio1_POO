@@ -54,7 +54,7 @@ public class Stadium {
 
     public Ticket[] sellTickets(Location location, Ticket oldTickets, int reqTickets, double budget){
         if (!this.checkStock()) return null;
-        Ticket[] newTickets = location.sellTickets(oldTickets, reqTickets, budget);
+        Ticket[] newTickets = location.sellTickets(this.ticketsSold, reqTickets, budget);
         this.ticketsSold += newTickets.length;
         return newTickets;
     }

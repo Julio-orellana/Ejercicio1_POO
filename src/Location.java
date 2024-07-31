@@ -32,11 +32,11 @@ public class Location {
     }
 
     // Overload para validar si antes tenia mas tickets y no perderlos.
-    public Ticket[] sellTickets(Ticket oldTicket, int reqTickets, double budget){
+    public Ticket[] sellTickets(int stadiumTkSold, int reqTickets, double budget){
         if (!this.checkAvailability(reqTickets, budget)) return null;
         Ticket[] newTickets = new Ticket[reqTickets];
         for (int i = 0; i < reqTickets; i++) {
-            newTickets[i] = new Ticket(this.ticketsSold + i + 1, this.name);
+            newTickets[i] = new Ticket(stadiumTkSold + i + 1, this.name);
         }
         this.ticketsSold += newTickets.length;
         ticketsSold += reqTickets;

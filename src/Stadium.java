@@ -35,4 +35,9 @@ public class Stadium {
         } return tkSold;
     }
 
+    public double getTotalRevenue(){
+        double totalRevenue;
+         
+    }
+
 }

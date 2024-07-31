@@ -25,7 +25,7 @@ public class Stadium {
         for (int i = 0; i < this.locations.length; i++){
             if (this.locations[i].getName() == locationName) return this.locations[i];
             continue;
-        } return false;
+        } return this.locations[-1];
     }
 
     public int getTotalTicketsSold(){

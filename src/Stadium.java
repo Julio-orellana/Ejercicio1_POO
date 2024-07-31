@@ -49,12 +49,13 @@ public class Stadium {
         for (int i = 0; i < this.locations.length; i++){
             locCapacity += this.locations[i].getCapacity();
         }
-        return locCapacity <= this.totalCapacity;
+        return locCapacity <= this.totalCapacity && this.ticketsSold <= this.totalCapacity;
     }
 
     public Ticket[] sellTickets(Location location, Ticket oldTickets, int reqTickets, double budget){
         if (!this.checkStock()) return null;
         Ticket[] newTickets = location.sellTickets(oldTickets, reqTickets, budget);
+        this.ticketsSold += newTickets.length;
         return newTickets;
     }
 

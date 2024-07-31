@@ -28,4 +28,11 @@ public class Ticket {
         this.correlativo++;
         return date + "-" + newCorrelativo;
     }
+
+    public String generateTicketID(Ticket lasTicket){
+        String newCorrelativo = String.valueOf(lasTicket.getCorrelativo());
+        this.correlativo++;
+        return date + "-" + newCorrelativo;
+    }
+
 }

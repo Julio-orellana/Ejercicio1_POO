@@ -38,7 +38,7 @@ public class Location {
         for (int i = 0; i < reqTickets; i++) {
             newTickets[i] = new Ticket(this.ticketsSold + i + 1, this.name);
         }
-        
+        this.ticketsSold += newTickets.length;
         ticketsSold += reqTickets;
         return newTickets;
     }

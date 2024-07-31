@@ -2,21 +2,21 @@ public class Client {
 
     private String name;
     private String phone;
-    private int reqTickets;
+    private int ticketsReq;
     private double budget;
     private Ticket[] tickets;
 
-    public Client(String name, String phone, int reqTickets, double budget){
+    public Client(String name, String phone, int ticketsReq, double budget){
         this.name = name;
         this.phone = phone;
-        this.reqTickets = reqTickets;
+        this.ticketsReq = ticketsReq;
         this.budget = budget;
     }
 
-    public Client(String name, String phone, int reqTickets, double budget, Ticket[] tickets){
+    public Client(String name, String phone, int ticketsReq, double budget, Ticket[] tickets){
         this.name = name;
         this.phone = phone;
-        this.reqTickets = reqTickets;
+        this.ticketsReq = ticketsReq;
         this.budget = budget;
         this.tickets = tickets;
     }
@@ -24,7 +24,7 @@ public class Client {
     public Client(String name, String phone, double budget){
     this.name = name;
         this.phone = phone;
-        this.reqTickets = 0;
+        this.ticketsReq = 0;
         this.budget = budget;
     }
 
@@ -37,28 +37,26 @@ public class Client {
     }
 
     public int getTicketsReq(){
-        return this.reqTickets;
+        return this.ticketsReq;
     }
 
-    public void setTicketsReq(int reqTickets){
-        this.reqTickets = reqTickets;
+    public void setTicketsReq(int ticketsReq){
+        this.ticketsReq = ticketsReq;
     }
 
     public double getBudget(){
         return this.budget;
     }
 
-    public void setBudget(double budget){
-        this.budget = budget;
-    }
-
     public Ticket[] getTickets(){
         return this.tickets;
     }
 
-    public void buyTickets(Stadium stadium, Location location){
-        Ticket[] newTickets = new Ticket[this.reqTickets];
-        stadium.sellTickets(location, this.tickets, this.reqTickets, this.budget);
-        this.tickets = newTickets;
+    public Ticket[] buyTickets(Stadium stadium, Location location, int reqTickets, double budget){
+        Ticket[] newTickets = new Ticket[reqTickets];
+        stadium.sellTickets(location, this.tickets, reqTickets, budget);
+        return newTickets;
     }
+
+
 }

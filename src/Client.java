@@ -65,4 +65,8 @@ public class Client {
             this.tickets = newTickets;
         }
     }
+
+    public String toString(){
+        return "Nombre: " + this.name + "\nTelefono: " + this.phone + "\nTickets requeridos: " + this.reqTickets + "\nPresupuesto: Q" + this.budget;
+    }
 }

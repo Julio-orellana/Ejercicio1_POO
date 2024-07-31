@@ -52,13 +52,19 @@ public class Stadium {
         return locCapacity <= this.totalCapacity;
     }
 
+    public Ticket[] sellTickets(Location location, Ticket[] oldTickets, int reqTickets, double budget){
+        if (!this.checkStock()) return null;
+        Ticket[] newTickets = location.sellTickets(oldTickets, reqTickets, budget);
+        return newTickets;
+    }
+
     public String generateReport(){
         String locationsNames = "";
         for (int i = 0; i < this.locations.length; i++){
             locationsNames += this.locations[i].getName();
             if (i != this.locations.length -1) locationsNames += ", ";
         }
-        String data = "Estadio: " + this.name + "\nCapacidad total del estadio: " + this.totalCapacity + "\nLocalidades: " + locationsNames + "\nTotal de tickets Vendidos: " + this.ticketsSold + "\nGanancias totales: " + this.revenue;
+        String data = "Estadio: " + this.name + "\nCapacidad total del estadio: " + this.totalCapacity + "\nLocalidades: " + locationsNames + "\nTotal de tickets Vendidos: " + this.ticketsSold + "\nGanancias totales: Q" + this.revenue;
         return data;
     }
 

@@ -1,6 +1,16 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+        // // File handling
+        // File file = new File("data.csv");
+        // FileWriter fileWriter = new FileWriter("data.csv");
+        // Scanner fileReader = new Scanner(file);
+        // while (fileReader.hasNextLine()) {
+        //     String data = fileReader.nextLine();
+        //     System.out.println(data);
+        // }
+
+
         Location[] locations = {
             new Location("Gradas", 5, 0, 300),
             new Location("Vip", 5, 0, 1500),
@@ -10,6 +20,13 @@ public class App {
 
         Stadium stadium = new Stadium("Bernabeu",20,locations, 0, 0);
 
+        Client client1 = new Client("Julio Orellana", "5012-0433", 5, 8000);
+
+        client1.buyTickets(stadium, locations[1]);
+        Ticket[] newTickets = client1.getTickets();
+        for (int i =0; i<newTickets.length; i++){
+            newTickets[i].toString();
+        }
         //client.buyTickets(stadium, location, 3, 1500);
         //client.buyTickets(stadium, location, oldTickets, 3, 1500);
     }

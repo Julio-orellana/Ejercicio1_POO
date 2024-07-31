@@ -14,6 +14,12 @@ public class Ticket {
         this.locationName = locationName;
     }
 
+    public Ticket(int correlativo, String locationName, Ticket lasTicket){
+        this.correlativo = correlativo;
+        this.locationName = locationName;
+        this.ticketID = generateTicketID(lasTicket);
+    }
+
     public Ticket(int correlativo, String locationName){
         this.correlativo = correlativo;
         this.locationName = locationName;
@@ -29,10 +35,18 @@ public class Ticket {
         return date + "-" + newCorrelativo;
     }
 
-    public String generateTicketID(Ticket lasTicket){
-        String newCorrelativo = String.valueOf(lasTicket.getCorrelativo());
+    public String generateTicketID(Ticket lastTicket){
+        String newCorrelativo = String.valueOf(lastTicket.getCorrelativo());
         this.correlativo++;
         return date + "-" + newCorrelativo;
+    }
+
+    public String getTicketID(){
+        return this.ticketID;
+    }
+
+    public String toString(){
+        return "TicketID: " + this.ticketID + "\nLocalidad: " + this.locationName;
     }
 
 }

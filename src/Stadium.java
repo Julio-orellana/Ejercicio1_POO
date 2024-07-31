@@ -68,4 +68,12 @@ public class Stadium {
         return data;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String toString(){
+        return "Estadio: " + this.name + "\nCapacidad total del estadio: " + this.totalCapacity + "\nLocalidades: " + this.locations + "\nTotal de tickets Vendidos: " + this.ticketsSold + "\nGanancias totales: Q" + this.revenue;
+    }
+
 }

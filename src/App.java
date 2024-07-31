@@ -36,7 +36,7 @@ public class App {
 
         System.out.println("Presupuesto del Cliente: " + client1.getBudget());
         client1.setBudget(6000);
-        client1.setTicketsReq(5);
+        client1.setTicketsReq(4);
         client1.buyTickets(stadium, locations[2]);
         newTickets = client1.getTickets();
         for (int i =0; i<newTickets.length; i++){
@@ -47,6 +47,6 @@ public class App {
     
         fileWriter.write(stadium.generateReport());
         fileWriter.close();
-        System.out.println("Informacion guardada en: " + file.getName());
+        System.out.println("Informacion guardada en: " + file.getAbsolutePath());
     }
 }

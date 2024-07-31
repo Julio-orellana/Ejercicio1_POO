@@ -18,7 +18,7 @@ public class App {
             new Location("General", 5, 0, 500)
         };
 
-        Stadium stadium = new Stadium("Bernabeu",20,locations, 0, 0);
+        Stadium stadium = new Stadium("Mercedes Benz Stadium",300,locations, 300, 15000);
 
         Client client1 = new Client("Julio Orellana", "5012-0433", 5, 8000);
 
@@ -27,5 +27,8 @@ public class App {
         for (int i =0; i<newTickets.length; i++){
            System.out.println(newTickets[i].toString());
         }
+
+        System.out.println("Ganancias totales del estadio : " + stadium.getName() + " Q"+stadium.getTotalRevenue());
+    
     }
 }

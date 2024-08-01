@@ -26,25 +26,46 @@ public class Ticket {
         this.ticketID = generateTicketID();
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getCorrelativo(){
         return this.correlativo;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String generateTicketID(){
         String newCorrelativo = String.valueOf(this.correlativo);
         return date + "-" + newCorrelativo;
     }
 
+    
+    /** 
+     * @param lastTicket
+     * @return String
+     */
     public String generateTicketID(Ticket lastTicket){
         int newCorrelativo = lastTicket.getCorrelativo() + 1;
         this.correlativo = newCorrelativo;
         return date + "-" + newCorrelativo;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getTicketID(){
         return this.ticketID;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return "TicketID: " + this.ticketID + "\nLocalidad: " + this.locationName;
     }

@@ -21,6 +21,11 @@ public class Stadium {
         this.ticketsSold = tkSold;
     }
 
+    
+    /** 
+     * @param locationName
+     * @return Location
+     */
     public Location getLocation(String locationName){
         for (int i = 0; i < this.locations.length; i++){
             if (this.locations[i].getName() == locationName) return this.locations[i];
@@ -28,6 +33,10 @@ public class Stadium {
         } return this.locations[-1];
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getTotalTicketsSold(){
         int tkSold = 0;
         for (int i = 0; i < this.locations.length; i++){
@@ -35,6 +44,10 @@ public class Stadium {
         } return tkSold;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getTotalRevenue(){
         double totalRevenue = 0;
          for (int i = 0; i < this.locations.length; i++){
@@ -44,6 +57,10 @@ public class Stadium {
          return this.revenue;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean checkStock(){
         int locCapacity = 0;
         for (int i = 0; i < this.locations.length; i++){
@@ -52,6 +69,14 @@ public class Stadium {
         return locCapacity <= this.totalCapacity && this.ticketsSold <= this.totalCapacity;
     }
 
+    
+    /** 
+     * @param location
+     * @param oldTickets
+     * @param reqTickets
+     * @param budget
+     * @return Ticket[]
+     */
     public Ticket[] sellTickets(Location location, Ticket oldTickets, int reqTickets, double budget){
         if (!this.checkStock()) return null;
         Ticket[] newTickets = location.sellTickets(this.ticketsSold, reqTickets, budget);
@@ -59,6 +84,10 @@ public class Stadium {
         return newTickets;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String generateReport(){
         String locationsNames = "(";
         for (int i = 0; i < this.locations.length; i++){
@@ -69,10 +98,18 @@ public class Stadium {
         return data;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName(){
         return this.name;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getLocationsNames(){
         String data ="(";
         for (int i = 0; i < this.locations.length; i++){
@@ -82,6 +119,10 @@ public class Stadium {
         return data;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String checkAvailability(){
         int[] availableTickets = new int[this.locations.length];
         int[] soldTickets = new int[this.locations.length];
@@ -102,6 +143,11 @@ public class Stadium {
         } return data;
     }
 
+    
+    /** 
+     * @param locationName
+     * @return String
+     */
     public String checkAvailability(String locationName){
         int[] availableTickets = new int[this.locations.length];
         int[] soldTickets = new int[this.locations.length];
@@ -119,6 +165,10 @@ public class Stadium {
         } return data;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return "Nombre del Estadio: " + this.name + "\nCapacidad total del estadio: " + this.totalCapacity + "\nLocalidades: " + this.getLocationsNames() + "\nTotal de tickets Vendidos: " + this.ticketsSold + "\nGanancias totales: Q" + this.revenue;
     }

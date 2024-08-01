@@ -30,35 +30,68 @@ public class Client {
         this.tickets = new Ticket[0];
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName(){
         return this.name;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getPhone(){
         return this.phone;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getTicketsReq(){
         return this.reqTickets;
     }
 
+    
+    /** 
+     * @param reqTickets
+     */
     public void setTicketsReq(int reqTickets){
         this.reqTickets = reqTickets;
         this.tickets = new Ticket[reqTickets];
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getBudget(){
         return this.budget;
     }
 
+    
+    /** 
+     * @param budget
+     */
     public void setBudget(double budget){
         this.budget = budget;
     }
 
+    
+    /** 
+     * @return Ticket[]
+     */
     public Ticket[] getTickets(){
         return this.tickets;
     }
 
+    
+    /** 
+     * @param stadium
+     * @param location
+     */
     public void buyTickets(Stadium stadium, Location location) {
         double moneySpent = 0;
         Ticket lastTicket = this.tickets[this.tickets.length -1];
@@ -72,6 +105,10 @@ public class Client {
         }
     }
 
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return "Nombre: " + this.name + "\nTelefono: " + this.phone + "\nTickets solicitados: " + this.reqTickets + "\nPresupuesto: Q" + this.budget;
     }

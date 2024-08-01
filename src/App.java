@@ -18,7 +18,7 @@ public class App {
         Scanner kb = new Scanner(System.in);
 
         Location[] locations = {
-            new Location("Gradas", 50, 0, 250),
+            new Location("Gradas", 20, 30, 250),
             new Location("Vip", 42, 8, 1720),
             new Location("Vip de pie", 50, 0, 575),
             new Location("General", 50, 0, 425)

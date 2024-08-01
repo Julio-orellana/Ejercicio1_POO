@@ -33,7 +33,7 @@ public class App {
         // Create the stadium
         Stadium stadium = new Stadium("Mercedes Benz Stadium",300,locations, 148, 138000);
 
-        // flag to know if the user wants to stay in the app or quit
+        // Flag to know if the user wants to stay in the app or quit
         boolean exit = false;
         char ans;
         Client[] clients = null; // Initialize clients to null
@@ -99,7 +99,7 @@ public class App {
                         System.out.println("Opción no válida.");
                         break;
                     }
-                    clients[clientIndex].buyTickets(stadium, locations[locChoice -1]); // You may need to select a location here
+                    clients[clientIndex].buyTickets(stadium, locations[locChoice -1]);
                     System.out.println("Informacion de tus tickets:\n");
                     Ticket[] newTickets = clients[clientIndex].getTickets();
                     for (Ticket newTicket : newTickets) {
@@ -115,14 +115,14 @@ public class App {
                     break;
 
                 case '4':
-                    // Informacion total
+                    // Total info of all locations
                     System.out.println("\nInformacion de disponibilidad de todas las localidades: ");
                     System.out.println(stadium.checkAvailability());
                     System.out.println();
                     break;
 
                 case '5':
-                    // Informacion individual
+                    // Individual info of a location
                     System.out.println("Localidades dispobiles: ");
                     for (int i = 0; i < locations.length; i++){
                         System.out.println((i + 1) + ". " + locations[i].getName());

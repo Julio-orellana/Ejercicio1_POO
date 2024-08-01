@@ -37,9 +37,9 @@ public class Location {
         Ticket[] newTickets = new Ticket[reqTickets];
         for (int i = 0; i < reqTickets; i++) {
             newTickets[i] = new Ticket(stadiumTkSold + i + 1, this.name);
+            this.capacity--;
         }
         this.ticketsSold += newTickets.length;
-        ticketsSold += reqTickets;
         return newTickets;
     }
 

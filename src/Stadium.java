@@ -82,6 +82,43 @@ public class Stadium {
         return data;
     }
 
+    public String checkAvailability(){
+        int[] availableTickets = new int[this.locations.length];
+        int[] soldTickets = new int[this.locations.length];
+        String[] locationsNames = new String[this.locations.length];
+        
+        for (int i = 0; i < this.locations.length; i++){
+            availableTickets[i] = this.locations[i].getCapacity();
+            soldTickets[i] = this.locations[i].getTicketsSold();
+            locationsNames[i] = this.locations[i].getName();
+        }
+
+        String data = "";
+        for (int i = 0; i < locationsNames.length; i++){
+            data += "LOCALIDAD: " + locationsNames[i];
+            data += ", Boletos vendidos: " + soldTickets[i];
+            data += ", Boletos disponibles: " + availableTickets[i] + ".";
+            if (i != locationsNames.length -1) data +="\n";
+        } return data;
+    }
+
+    public String checkAvailability(String locationName){
+        int[] availableTickets = new int[this.locations.length];
+        int[] soldTickets = new int[this.locations.length];
+        String[] locationsNames = new String[this.locations.length];
+        
+        for (int i = 0; i < this.locations.length; i++){
+            availableTickets[i] = this.locations[i].getCapacity();
+            soldTickets[i] = this.locations[i].getTicketsSold();
+            locationsNames[i] = this.locations[i].getName();
+        }
+
+        String data = "";
+        for (int i = 0; i < locationsNames.length; i++){
+            if (String.valueOf(locationsNames[i]).equals(locationName)) return "LOCALIDAD: " + locationsNames[i] + ", Boletos vendidos: " + soldTickets[i] + ", Boletos disponibles: " + availableTickets[i] + ".";
+        } return data;
+    }
+
     public String toString(){
         return "Nombre del Estadio: " + this.name + "\nCapacidad total del estadio: " + this.totalCapacity + "\nLocalidades: " + this.getLocationsNames() + "\nTotal de tickets Vendidos: " + this.ticketsSold + "\nGanancias totales: Q" + this.revenue;
     }
